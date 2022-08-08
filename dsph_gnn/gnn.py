@@ -8,9 +8,9 @@ from .flows import build_maf
 
 class DeepSet(torch.nn.Module):
 
-    def __init__(self):
+    def __init__(self, *args, **kargs):
         super().__init__()
-        self.layer = torch.nn.Linear()
+        self.layer = torch.nn.Linear(*args, **kargs)
 
     def forward(self, x, edge_index, edge_weight=None):
         return self.layer(x)
