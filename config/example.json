@@ -1,0 +1,12 @@
+{
+    "graph_hparams":
+    {
+        "k": 4,
+        "loop": true,
+        "force_undirected": true
+    },
+    "conv_hparams":
+    {
+        "K": 4
+    }
+}
