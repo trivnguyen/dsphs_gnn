@@ -5,8 +5,15 @@ import glob
 from pathlib import Path
 import torch
 from torch_geometric.data import Data
+import numpy as np
 
 from .envs import DEFAULT_RUN_PATH, DEFAULT_DATASET_PATH
+
+def get_all_dataset(prefix=DEFAULT_DATASET_PATH):
+    return glob.glob(os.path.join(prefix, "*"))
+
+def get_all_run(prefix=DEFAULT_RUN_PATH):
+    return glob.glob(os.path.join(prefix, "*"))
 
 def get_dataset(name, prefix=DEFAULT_DATASET_PATH, train=True, is_dir=True):
     """ Get path to dataset directory """
