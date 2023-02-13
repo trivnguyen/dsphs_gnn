@@ -41,12 +41,13 @@ if __name__ == '__main__':
 
     # Read raw dataset
     print('Read raw dataset from {}'.format(FLAGS.input))
-    features, labels, headers = utils.io_utils.read_ds(FLAGS.input)
+    features, labels, headers = utils.read_ds(FLAGS.input)
     num_samples = len(features)
     nx = 2  # number of position dimension
 
     print('Number of samples: {}'.format(num_samples))
     print('Velocity error: {} [km / s]'.format(FLAGS.velocity_error))
+    print('Proper motion: {}'.format(FLAGS.proper_motion))
     print('Random seed: {}'.format(FLAGS.seed))
 
     # Iterate over all graphs
@@ -104,9 +105,11 @@ if __name__ == '__main__':
         'seed': str(FLAGS.seed),
     })
 
+    os.makedirs(os.path.dirname(FLAGS.output), exist_ok=True)
+
     # Write a processed dataset
     print('Write processed dataset to {}'.format(FLAGS.output))
-    utils.io_utils.write_ds(
+    utils.write_ds(
         FLAGS.output, new_features,
         graph_properties={"labels": labels},
         headers=headers)

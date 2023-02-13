@@ -1,3 +1,3 @@
 [submodule "dsph_gnn/StarSampler"]
-	path = dsph_gnn/StarSampler
+	path = dsphs_gnn/StarSampler
 	url = git@github.com:trivnguyen/StarSampler.git

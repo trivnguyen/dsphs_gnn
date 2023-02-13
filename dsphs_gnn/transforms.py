@@ -13,9 +13,10 @@ class FeaturePreprocess(T.BaseTransform):
         radius = torch.linalg.norm(pos, ord=2, dim=1, keepdims=True)
 
         if self.log_radius:
-            data.x = torch.stack([torch.log10(radius), vel], axis=1).squeeze()
+            data.x = torch.hstack([torch.log10(radius), vel]).squeeze()
         else:
-            data.x = torch.stack([radius, vel], axis=1).squeeze()
+            data.x = torch.hstack([radius, vel]).squeeze()
+
         data.pos = pos
         return data
 

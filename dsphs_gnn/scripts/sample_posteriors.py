@@ -13,8 +13,8 @@ import pytorch_lightning as pl
 from torch_geometric.loader import DataLoader
 from pytorch_lightning.loggers import CSVLogger
 
-from dsph_gnn import data_module, utils
-from dsph_gnn.envs import DEFAULT_RUN_PATH, DEFAULT_DATASET_PATH
+from dsphs_gnn import data_module, utils
+from dsphs_gnn.envs import DEFAULT_RUN_PATH, DEFAULT_DATASET_PATH
 
 FLAGS = None
 
@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
     # Write evaluate result to HDF5 file
     if os.path.isabs(FLAGS.output):
-        output = output
+        output = FLAGS.output
     else:
         outdir = os.path.join(best_run_path, "evaluate_output")
         os.makedirs(outdir, exist_ok=True)

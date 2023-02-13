@@ -119,6 +119,12 @@ def read_ds(path):
 
         # read labels
         labels = f['labels'][:]
+
+        # fixing old code
+        if f.get("stellar_labels") is not None:
+            stellar_labels = f['stellar_labels'][:]
+            labels = np.hstack([labels, stellar_labels])
+
     return features, labels, attrs
 
 def create_ds(features, labels, transforms):
@@ -131,4 +137,3 @@ def create_ds(features, labels, transforms):
         data = transforms(data)
         dataset.append(data)
     return dataset
-
