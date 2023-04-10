@@ -13,8 +13,8 @@ import pytorch_lightning as pl
 from torch_geometric.loader import DataLoader
 from pytorch_lightning.loggers import CSVLogger
 
-from dsph_gnn import data_module, utils
-from dsph_gnn.envs import DEFAULT_RUN_PATH, DEFAULT_DATASET_PATH
+from dsphs_gnn import data_module, utils
+from dsphs_gnn.envs import DEFAULT_RUN_PATH, DEFAULT_DATASET_PATH
 
 FLAGS = None
 
@@ -42,12 +42,6 @@ def parse_cmd():
     parser.add_argument(
         "--resume", required=False, action="store_true",
         help="Enable to resume previous run. Version number is required")
-    #parser.add_argument(
-    #    "-i", "--input", required=True, nargs=2,
-    #    help="Path to (train, validation) input files.")
-    #parser.add_argument(
-    #    "-o", "--out-dir", required=True,
-    #    help="Path to output directory.")
 
     # model and graph args
     parser.add_argument(

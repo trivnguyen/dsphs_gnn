@@ -3,7 +3,7 @@
 import os
 import argparse
 import numpy as np
-from dsph_gnn import utils
+from dsphs_gnn import utils
 
 FLAGS = None
 

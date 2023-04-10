@@ -1,12 +1,9 @@
 
-import logging
 import torch
-import torch_geometric
 import pytorch_lightning as pl
 
 from . import gnn, transforms
-
-logger = logging.getLogger(__name__)
+from .logger import logger
 
 class DataModule(pl.LightningModule):
 
