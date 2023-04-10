@@ -1,4 +1,4 @@
 
-from . import envs
+from . import config
 from . import StarSampler
 
