@@ -12,6 +12,9 @@ def gNFW(r, rho_s, r_s, gamma):
     x = r / r_s
     return rho_s * x**(-gamma) * (1 + x)**(-3 + gamma)
 
+def beta(r, r_a):
+    """ Velocity anisotropy profile Beta(r) """
+    return r**2 / (r**2 + r_a**2)
 
 def M_enc(r, rho_s, r_s, gamma):
     """ Enclosed mass profile for a generalized NFW profile. Formula:
