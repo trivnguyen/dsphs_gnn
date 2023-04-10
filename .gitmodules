@@ -1,0 +1,3 @@
+[submodule "src/StarSampler"]
+	path = src/StarSampler
+	url = git@github.com:trivnguyen/StarSampler.git
